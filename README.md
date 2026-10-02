@@ -31,7 +31,7 @@ than from a pasted spreadsheet.
 | **Endpoint** | `https://api.twelfth.ai/mcp` (Streamable HTTP) |
 | **Sign-in** | OAuth 2.1 with your Twelfth account. Choose the workspace and approve the read tools; no key to copy |
 | **Access** | Read-only. Assistants cannot create, change or commit anything |
-| **Scope** | One workspace, as the person who connected: their role, remits and categories |
+| **Scope** | One workspace, as the person who connected: their role, remits and categories. Owners and admins see and can end every connection |
 | **Registry** | [`ai.twelfth/workspace`](https://registry.modelcontextprotocol.io/v0.1/servers?search=ai.twelfth/workspace&version=latest), published from the twelfth.ai domain |
 | **Docs** | [twelfth.ai/ai](https://twelfth.ai/ai) · [MCP guide](https://twelfth.ai/developers/mcp) |
 
@@ -42,11 +42,11 @@ if your team doesn't have one yet.
 
 ```mermaid
 flowchart LR
-    A["AI assistant<br/>Claude · ChatGPT · Copilot · Cursor"] -- "1 · adds api.twelfth.ai/mcp" --> S["Twelfth sign-in<br/>choose workspace · approve read tools"]
-    S -- "2 · OAuth token, scoped to one workspace" --> A
-    A -- "3 · read-only tool calls" --> M["Twelfth MCP<br/>api.twelfth.ai/mcp"]
-    M -- "4 · reads as the member:<br/>role · remits · categories" --> W[("Your Twelfth<br/>workspace")]
-    ADM["Workspace owner / admin"] -. "sees every connection · ends any of them" .-> M
+    A["AI assistant<br/>Claude · ChatGPT<br/>Copilot · Cursor"] -- "1 · adds the URL" --> S["Twelfth sign-in<br/>pick workspace<br/>approve read tools"]
+    S -- "2 · scoped token" --> A
+    A -- "3 · read-only calls" --> M["Twelfth MCP<br/>api.twelfth.ai/mcp"]
+    M -- "4 · as the member" --> W[("Your<br/>workspace")]
+    ADM["Owner / admin"] -. "sees · ends any connection" .-> M
 
     classDef ink fill:#1e3b2c,stroke:#14291f,color:#f6efdd;
     classDef paper fill:#f6efdd,stroke:#1e3b2c,color:#1e3b2c;
