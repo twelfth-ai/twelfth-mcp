@@ -1,0 +1,16 @@
+{
+  "name": "twelfth",
+  "displayName": "Twelfth",
+  "version": "1.0.0",
+  "description": "Read your Twelfth retail workspace: products, sales, inventory, suppliers, pricing, projects and actions, through permission-scoped, read-only MCP tools.",
+  "author": {
+    "name": "Twelfth AI Pty Ltd",
+    "email": "hello@twelfth.ai",
+    "url": "https://twelfth.ai"
+  },
+  "homepage": "https://twelfth.ai/developers/mcp",
+  "repository": "https://github.com/twelfth-ai/twelfth-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "retail", "ecommerce", "pricing", "inventory", "category-management", "analytics"],
+  "logo": "assets/logo.svg"
+}

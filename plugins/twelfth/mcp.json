@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "twelfth": {
+      "url": "https://api.twelfth.ai/mcp"
+    }
+  }
+}
