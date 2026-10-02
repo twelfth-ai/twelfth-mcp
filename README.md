@@ -10,7 +10,7 @@
   <img alt="Auth: OAuth 2.1" src="https://img.shields.io/badge/auth-OAuth_2.1-3a6b33?style=flat-square">
   <img alt="Transport: Streamable HTTP" src="https://img.shields.io/badge/transport-Streamable_HTTP-3a6b33?style=flat-square">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-c8a24b?style=flat-square"></a>
-  <a href="https://smithery.ai/servers/twelfth/twelfth"><img alt="Smithery" src="https://smithery.ai/badge/twelfth/twelfth"></a>
+  <a href="https://smithery.ai/servers/twelfth/twelfth"><img alt="Smithery: twelfth/twelfth" src="https://img.shields.io/badge/Smithery-twelfth%2Ftwelfth-3a6b33?style=flat-square"></a>
 </p>
 
 <p align="center">
