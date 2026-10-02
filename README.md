@@ -1,5 +1,7 @@
 # Twelfth MCP
 
+[![smithery badge](https://smithery.ai/badge/twelfth/twelfth)](https://smithery.ai/servers/twelfth/twelfth)
+
 Connect an AI assistant to your [Twelfth](https://twelfth.ai) workspace.
 
 Twelfth is a commercial workspace for retail and category teams. Its hosted MCP
@@ -64,3 +66,5 @@ Twelfth.
 
 The contents of this repository are MIT licensed. The Twelfth service is
 governed by its [terms](https://twelfth.ai/legals/terms).
+
+smithery-verification=0c586824f907c08ca5140641c9ddc0c07e5e1574fd305497c14360c7f4ded531
