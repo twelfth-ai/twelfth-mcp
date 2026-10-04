@@ -1,6 +1,7 @@
 # Twelfth MCP
 
 [![smithery badge](https://smithery.ai/badge/twelfth/twelfth)](https://smithery.ai/servers/twelfth/twelfth)
+[![Twelfth MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/ai.twelfth/workspace/badges/score.svg)](https://glama.ai/mcp/connectors/ai.twelfth/workspace)
 
 Connect an AI assistant to your [Twelfth](https://twelfth.ai) workspace.
 
