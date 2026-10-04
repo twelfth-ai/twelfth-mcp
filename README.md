@@ -11,6 +11,7 @@
   <img alt="Transport: Streamable HTTP" src="https://img.shields.io/badge/transport-Streamable_HTTP-3a6b33?style=flat-square">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-c8a24b?style=flat-square"></a>
   <a href="https://smithery.ai/servers/twelfth/twelfth"><img alt="Smithery: twelfth/twelfth" src="https://img.shields.io/badge/Smithery-twelfth%2Ftwelfth-3a6b33?style=flat-square"></a>
+  <a href="https://glama.ai/mcp/connectors/ai.twelfth/workspace"><img alt="Glama: tool definition quality and endpoint health" src="https://glama.ai/mcp/connectors/ai.twelfth/workspace/badges/score.svg"></a>
 </p>
 
 <p align="center">
