@@ -1,0 +1,10 @@
+{
+  "name": "twelfth",
+  "version": "1.0.0",
+  "description": "Read your Twelfth retail workspace (products, sales, inventory, suppliers, pricing, projects and actions) through permission-scoped, read-only MCP tools.",
+  "mcpServers": {
+    "twelfth": {
+      "httpUrl": "https://api.twelfth.ai/mcp"
+    }
+  }
+}
