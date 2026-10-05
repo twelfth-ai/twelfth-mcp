@@ -355,7 +355,36 @@ async function main() {
     }
   }
 
+  await validateGeminiSkillCopies();
   summarizeAndExit();
+}
+
+// Gemini CLI loads skills only from <repo>/skills, and a symlink there does not
+// survive `gemini extensions install`. So the plugin's skills are copied, and
+// the copies must match the plugin's exactly.
+async function validateGeminiSkillCopies() {
+  if (!(await pathExists(path.join(repoRoot, "gemini-extension.json")))) {
+    return;
+  }
+  const pluginSkills = path.join(repoRoot, "plugins", "twelfth", "skills");
+  const geminiSkills = path.join(repoRoot, "skills");
+  const relative = async (dir) =>
+    (await pathExists(dir)) ? (await walkFiles(dir)).map((file) => path.relative(dir, file)).sort() : [];
+  const pluginFiles = await relative(pluginSkills);
+  const geminiFiles = await relative(geminiSkills);
+  if (pluginFiles.join("\n") !== geminiFiles.join("\n")) {
+    addError("skills/ must hold the same files as plugins/twelfth/skills/ (copy them across).");
+    return;
+  }
+  for (const file of pluginFiles) {
+    const [a, b] = await Promise.all([
+      fs.readFile(path.join(pluginSkills, file), "utf8"),
+      fs.readFile(path.join(geminiSkills, file), "utf8"),
+    ]);
+    if (a !== b) {
+      addError(`skills/${file} differs from plugins/twelfth/skills/${file} (copy it across).`);
+    }
+  }
 }
 
 function summarizeAndExit() {

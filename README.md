@@ -120,7 +120,7 @@ operated by Twelfth AI Pty Ltd.
 | --- | --- |
 | `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and a `twelfth-workspace` skill that helps the assistant use the tools well |
 | `.cursor-plugin/`, `.claude-plugin/` | Marketplace manifests for Cursor and Claude Code |
-| `gemini-extension.json`, `skills/` | The Gemini CLI extension. `skills/` links to the plugin's skills, so there is one copy |
+| `gemini-extension.json`, `skills/` | The Gemini CLI extension. `skills/` is a copy of the plugin's skills; `node scripts/validate-template.mjs` fails if they drift |
 
 ## Support
 
