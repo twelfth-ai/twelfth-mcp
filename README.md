@@ -80,6 +80,15 @@ Add Twelfth to `.cursor/mcp.json`. Cursor sends you to Twelfth to sign in on fir
 
 Or just the server: `claude mcp add --transport http twelfth https://api.twelfth.ai/mcp`
 
+### Gemini CLI
+
+```sh
+gemini extensions install https://github.com/twelfth-ai/twelfth-mcp
+```
+
+Then run `/mcp auth twelfth` inside Gemini CLI to sign in. The extension adds
+the server and the `twelfth-workspace` skill.
+
 ### Claude, ChatGPT, Gemini and other clients
 
 Add a custom connector with the URL `https://api.twelfth.ai/mcp` and complete
@@ -111,6 +120,7 @@ operated by Twelfth AI Pty Ltd.
 | --- | --- |
 | `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and a `twelfth-workspace` skill that helps the assistant use the tools well |
 | `.cursor-plugin/`, `.claude-plugin/` | Marketplace manifests for Cursor and Claude Code |
+| `gemini-extension.json`, `skills/` | The Gemini CLI extension. `skills/` links to the plugin's skills, so there is one copy |
 
 ## Support
 
