@@ -98,6 +98,16 @@ Or add it to `.vscode/mcp.json` (or your user `mcp.json`):
 Start the server, sign in to Twelfth when VS Code asks, then use the tools from
 Copilot Chat in agent mode.
 
+### GitHub Copilot CLI
+
+```sh
+copilot plugin marketplace add twelfth-ai/twelfth-mcp
+copilot plugin install twelfth@twelfth
+```
+
+This adds the server and the `twelfth-workspace` skill. Copilot asks you to sign
+in to Twelfth the first time a tool runs.
+
 ### Gemini CLI
 
 ```sh
