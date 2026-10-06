@@ -80,6 +80,24 @@ Add Twelfth to `.cursor/mcp.json`. Cursor sends you to Twelfth to sign in on fir
 
 Or just the server: `claude mcp add --transport http twelfth https://api.twelfth.ai/mcp`
 
+### VS Code and GitHub Copilot
+
+[<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_Twelfth-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white">](https://insiders.vscode.dev/redirect/mcp/install?name=twelfth&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//api.twelfth.ai/mcp%22%7D)
+[<img alt="Install in VS Code Insiders" src="https://img.shields.io/badge/VS_Code_Insiders-Install_Twelfth-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white">](https://insiders.vscode.dev/redirect/mcp/install?name=twelfth&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//api.twelfth.ai/mcp%22%7D&quality=insiders)
+
+Or add it to `.vscode/mcp.json` (or your user `mcp.json`):
+
+```json
+{
+  "servers": {
+    "twelfth": { "type": "http", "url": "https://api.twelfth.ai/mcp" }
+  }
+}
+```
+
+Start the server, sign in to Twelfth when VS Code asks, then use the tools from
+Copilot Chat in agent mode.
+
 ### Gemini CLI
 
 ```sh
