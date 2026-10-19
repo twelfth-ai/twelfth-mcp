@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=ai.twelfth/workspace&version=latest"><img alt="Official MCP Registry: ai.twelfth/workspace" src="https://img.shields.io/badge/MCP_Registry-ai.twelfth%2Fworkspace-1e3b2c?style=flat-square"></a>
-  <img alt="Access: read-only" src="https://img.shields.io/badge/access-read--only-3a6b33?style=flat-square">
+  <img alt="Access: reads by default, changes opt-in" src="https://img.shields.io/badge/access-reads_by_default-3a6b33?style=flat-square">
   <img alt="Auth: OAuth 2.1" src="https://img.shields.io/badge/auth-OAuth_2.1-3a6b33?style=flat-square">
   <img alt="Transport: Streamable HTTP" src="https://img.shields.io/badge/transport-Streamable_HTTP-3a6b33?style=flat-square">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-c8a24b?style=flat-square"></a>
@@ -30,8 +30,8 @@ than from a pasted spreadsheet.
 | | |
 | --- | --- |
 | **Endpoint** | `https://api.twelfth.ai/mcp` (Streamable HTTP) |
-| **Sign-in** | OAuth 2.1 with your Twelfth account. Choose the workspace and approve the read tools; no key to copy |
-| **Access** | Read-only. Assistants cannot create, change or commit anything |
+| **Sign-in** | OAuth 2.1 with your Twelfth account. Choose the workspace and approve the tools; no key to copy |
+| **Access** | Reads by default. Changes are opt-in: tick **Allow changes** when connecting and the assistant can create, complete or snooze your own actions and run your own routines, as you. None raises an order or changes a price |
 | **Scope** | One workspace, as the person who connected: their role, remits and categories. Owners and admins see and can end every connection |
 | **Registry** | [`ai.twelfth/workspace`](https://registry.modelcontextprotocol.io/v0.1/servers?search=ai.twelfth/workspace&version=latest), published from the twelfth.ai domain |
 | **Docs** | [twelfth.ai/ai](https://twelfth.ai/ai) · [MCP guide](https://twelfth.ai/developers/mcp) |
@@ -43,9 +43,9 @@ if your team doesn't have one yet.
 
 ```mermaid
 flowchart LR
-    A["AI assistant<br/>Claude · ChatGPT<br/>Copilot · Cursor"] -- "1 · adds the URL" --> S["Twelfth sign-in<br/>pick workspace<br/>approve read tools"]
+    A["AI assistant<br/>Claude · ChatGPT<br/>Copilot · Cursor"] -- "1 · adds the URL" --> S["Twelfth sign-in<br/>pick workspace<br/>approve tools"]
     S -- "2 · scoped token" --> A
-    A -- "3 · read-only calls" --> M["Twelfth MCP<br/>api.twelfth.ai/mcp"]
+    A -- "3 · tool calls" --> M["Twelfth MCP<br/>api.twelfth.ai/mcp"]
     M -- "4 · as the member" --> W[("Your<br/>workspace")]
     ADM["Owner / admin"] -. "sees · ends any connection" .-> M
 
@@ -132,12 +132,39 @@ A workspace owner or admin can create a labelled, tool-limited key under
 
 | Control | How it works |
 | --- | --- |
-| **Read-only by design** | Every tool reads. Decisions are reviewed and committed by people inside Twelfth |
+| **Reads by default** | Every tool reads unless the person ticks **Allow changes** on the consent page. Write tools are offered only over OAuth, only after that opt-in, and act only on the person's own actions and routines. Workspace keys never make changes. Orders, prices and other commercial decisions are still committed by people inside Twelfth |
 | **Least privilege** | An OAuth connection inherits the member's role and remits and stops working when they leave the workspace. Tools are chosen at consent |
 | **Admin visibility** | Owners and admins see every connection, the client and version that connected, and can end any of them. An ended connection is refused on its next request |
 | **Keys** | Created only by owners and admins, labelled by environment, limited to selected tools, stored hashed and shown once |
 | **Audit** | Each call is logged with tool, outcome, time and duration. Tool results are never stored or sent to analytics; only their size is recorded |
 | **Compliance** | Controls, sub-processors and our SOC 2 / ISO 27001 programme: [trust.twelfth.ai](https://trust.twelfth.ai) |
+
+## Skills
+
+The plugin ships eight [Agent Skills](https://agentskills.io). The server also
+serves them over the MCP Skills extension (`skills/list`), so an assistant that
+supports it gets them without installing anything.
+
+**Retail analysis.** These work on a spreadsheet or pasted data. No Twelfth
+account is needed.
+
+| Skill | Use it to |
+| --- | --- |
+| `sales-decline-diagnosis` | Find out why sales of a category, supplier or product fell: split the change into units, price, mix and returns, then test the causes cheapest first |
+| `category-review` | Review a category: its role, scorecard, availability, return on stock, range and promotions, and what to do next |
+| `range-review` | Decide which lines to keep, cut or add, using where a cut line's shoppers would go and stock you've already bought |
+| `supplier-offer-review` | Read a supplier's stock list or offer against your sales and cover: what to buy, how much, and what's missing |
+| `competitor-price-check` | Check price position on matched products: listing errors, pack sizes, member and promo prices, a weighted index, and whether to match |
+
+**Twelfth.** These need the Twelfth connection.
+
+| Skill | Use it to |
+| --- | --- |
+| `twelfth-workspace` | Get started: which workspace is connected, what the tools can see, and how changes work |
+| `twelfth-weekly-trading-brief` | Write Monday's brief: actions due, suppliers waiting, cover pressure, price position and three things to do first |
+| `twelfth-competitor-pricing` | Answer pricing questions from tracked sets, competitor comparisons and price history |
+
+Each retail-analysis skill ends with what changes when Twelfth is connected.
 
 ## What's in this repo
 
@@ -146,7 +173,7 @@ operated by Twelfth AI Pty Ltd.
 
 | Path | What |
 | --- | --- |
-| `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and a `twelfth-workspace` skill that helps the assistant use the tools well |
+| `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and the eight skills above |
 | `.cursor-plugin/`, `.claude-plugin/` | Marketplace manifests for Cursor and Claude Code |
 | `gemini-extension.json`, `skills/` | The Gemini CLI extension. `skills/` is a copy of the plugin's skills; `node scripts/validate-template.mjs` fails if they drift |
 
