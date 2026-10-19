@@ -5,14 +5,14 @@
     "email": "hello@twelfth.ai"
   },
   "metadata": {
-    "description": "Twelfth's hosted, read-only MCP server for retail and category teams",
-    "version": "1.0.0"
+    "description": "Twelfth's hosted MCP server for retail and category teams",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "twelfth",
       "source": "./plugins/twelfth",
-      "description": "Read your Twelfth retail workspace through permission-scoped, read-only MCP tools"
+      "description": "Read your Twelfth retail workspace through permission-scoped MCP tools that read by default"
     }
   ]
 }

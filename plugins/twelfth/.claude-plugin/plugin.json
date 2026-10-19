@@ -1,7 +1,7 @@
 {
   "name": "twelfth",
-  "version": "1.0.0",
-  "description": "Read your Twelfth retail workspace: products, sales, inventory, suppliers, pricing, projects and actions, through permission-scoped, read-only MCP tools.",
+  "version": "1.1.0",
+  "description": "Read your Twelfth retail workspace: products, sales, inventory, suppliers, pricing, projects and actions, through permission-scoped MCP tools that read by default; with Allow changes, also manage your own actions and routines.",
   "author": {
     "name": "Twelfth AI Pty Ltd",
     "email": "hello@twelfth.ai",
