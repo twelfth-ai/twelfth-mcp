@@ -1,6 +1,11 @@
 ---
 name: twelfth-workspace
 description: Answer questions about a Twelfth retail workspace (products, suppliers, sales, inventory, pricing, projects, members and open actions) using the Twelfth MCP tools. Use when the user mentions Twelfth, their workspace, or asks about their own retail or category data.
+license: MIT
+metadata:
+  author: Twelfth
+  version: "1.0.0"
+  tier: twelfth
 ---
 
 # Working with a Twelfth workspace

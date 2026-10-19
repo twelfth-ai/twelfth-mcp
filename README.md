@@ -139,6 +139,33 @@ A workspace owner or admin can create a labelled, tool-limited key under
 | **Audit** | Each call is logged with tool, outcome, time and duration. Tool results are never stored or sent to analytics; only their size is recorded |
 | **Compliance** | Controls, sub-processors and our SOC 2 / ISO 27001 programme: [trust.twelfth.ai](https://trust.twelfth.ai) |
 
+## Skills
+
+The plugin ships eight [Agent Skills](https://agentskills.io). The server also
+serves them over the MCP Skills extension (`skills/list`), so an assistant that
+supports it gets them without installing anything.
+
+**Retail analysis.** These work on a spreadsheet or pasted data. No Twelfth
+account is needed.
+
+| Skill | Use it to |
+| --- | --- |
+| `sales-decline-diagnosis` | Find out why sales of a category, supplier or product fell: split the change into units, price, mix and returns, then test the causes cheapest first |
+| `category-review` | Review a category: its role, scorecard, availability, return on stock, range and promotions, and what to do next |
+| `range-review` | Decide which lines to keep, cut or add, using where a cut line's shoppers would go and stock you've already bought |
+| `supplier-offer-review` | Read a supplier's stock list or offer against your sales and cover: what to buy, how much, and what's missing |
+| `competitor-price-check` | Check price position on matched products: listing errors, pack sizes, member and promo prices, a weighted index, and whether to match |
+
+**Twelfth.** These need the Twelfth connection.
+
+| Skill | Use it to |
+| --- | --- |
+| `twelfth-workspace` | Get started: which workspace is connected, what the tools can see, and how changes work |
+| `twelfth-weekly-trading-brief` | Write Monday's brief: actions due, suppliers waiting, cover pressure, price position and three things to do first |
+| `twelfth-competitor-pricing` | Answer pricing questions from tracked sets, competitor comparisons and price history |
+
+Each retail-analysis skill ends with what changes when Twelfth is connected.
+
 ## What's in this repo
 
 This repository holds client configuration only; the server is hosted and
@@ -146,7 +173,7 @@ operated by Twelfth AI Pty Ltd.
 
 | Path | What |
 | --- | --- |
-| `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and a `twelfth-workspace` skill that helps the assistant use the tools well |
+| `plugins/twelfth/` | The plugin: MCP config for Cursor (`mcp.json`) and Claude Code (`.mcp.json`), and the eight skills above |
 | `.cursor-plugin/`, `.claude-plugin/` | Marketplace manifests for Cursor and Claude Code |
 | `gemini-extension.json`, `skills/` | The Gemini CLI extension. `skills/` is a copy of the plugin's skills; `node scripts/validate-template.mjs` fails if they drift |
 

@@ -12,7 +12,7 @@
     {
       "name": "twelfth",
       "source": "./plugins/twelfth",
-      "description": "Read your Twelfth retail workspace through permission-scoped MCP tools that read by default"
+      "description": "Read your Twelfth retail workspace through permission-scoped MCP tools that read by default, plus retail analysis skills (sales decline, category and range review, supplier offers, competitor prices)"
     }
   ]
 }
