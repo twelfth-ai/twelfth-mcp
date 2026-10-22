@@ -134,7 +134,7 @@ empty result as possibly no access rather than nothing there.
 | Match barcodes or supplier codes to SKUs | `search_catalogue` with `ids` (up to 100 at a time) |
 | Stock, rate of sale, cover, on order, cost for those SKUs | `twelfth_get_products` (up to 100 SKUs) |
 | The supplier's whole range with figures | `twelfth_list_products` filtered by `suppliers` |
-| Lead time, carton size, on order on the open work unit | `get_supplier_constraints` (open work unit only, not the whole business) |
+| Lead time, carton size, on order on the open task | `get_supplier_constraints` (open task only, not the whole business) |
 | Cover targets and defaults | `twelfth_get_preferences` |
 | What changed since their last offer | `compare_supplier_offer_history` |
 | What was bought before, and why | `recall_decisions` |
