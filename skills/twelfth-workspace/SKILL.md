@@ -4,7 +4,7 @@ description: Answer questions about a Twelfth retail workspace (products, suppli
 license: MIT
 metadata:
   author: Twelfth
-  version: "1.0.0"
+  version: "1.1.0"
   tier: twelfth
 ---
 
@@ -27,14 +27,19 @@ with the tools they chose on the consent screen.
 
 ## Read carefully
 
-- **Reads by default; changes only when allowed.** The write tools
-  (`twelfth_create_action`, `twelfth_complete_action`, `twelfth_snooze_action`,
-  `twelfth_run_routine`) are offered only if the person ticked **Allow changes**
-  when connecting, and act only on their own actions and routines. Call one only
+- **Reads by default; changes only when allowed.** The write tools on the
+  person's own things (`twelfth_create_action`, `twelfth_complete_action`,
+  `twelfth_snooze_action`, `twelfth_run_routine`, `twelfth_set_routine_paused`,
+  `twelfth_mute_routine_product`, `twelfth_update_my_settings`)
+  are offered only if the person ticked **Allow changes** when connecting, and
+  act as that person. Workspace-wide writes (`twelfth_update_settings`) are
+  offered only once the person approves them for this connection. Read
+  `twelfth_get_settings` first for a setting's revision. Call a write only
   when the user asks for that change, then say what changed. Never claim a
   change no tool made. No tool raises an order or changes a price. When a write
-  tool isn't offered, tell the user where to make the change in the Twelfth
-  app, or that they can reconnect with **Allow changes** ticked.
+  tool isn't offered, tell the user they can approve it on this connection's
+  row in **Settings → AI & agents** without reconnecting, or reconnect with
+  **Allow changes** ticked if the connection reads only.
 - **An empty result is not proof of absence.** It can mean the person lacks
   access to that part of the workspace (a category, remit or capability), or
   that a filter was too narrow. Say which you can't rule out, instead of saying
