@@ -23,7 +23,6 @@ matching Gemini skill copies on pull requests to `main` and pushes to `main`.
 It uses no secrets or application credentials and installs no project
 dependencies. Public issues and comments do not trigger workflows.
 
-Merging into `main` requires a pull request, passing CI and signed commits, and
-only squash merges are allowed. Nobody can skip those. Repository admins may
-merge their own pull requests without a second approval; everyone else needs an
-approval of the latest changes and resolved review conversations.
+Merging into `main` requires passing CI, an independent approval of the latest
+changes and resolved review conversations. Only squash merges are allowed. The
+repository owner may bypass these rules on a pull request.
