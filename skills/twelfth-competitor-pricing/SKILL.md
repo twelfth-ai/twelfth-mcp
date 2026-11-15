@@ -111,6 +111,9 @@ asked to reprice.
 If the person ticked **Allow changes**, and only when they ask:
 `twelfth_create_action` logs a follow-up (for example "review price on <SKU>").
 `twelfth_complete_action` on a price review task closes it as reviewed; it does
-not change the price. Never claim a change no tool made.
+not change the price. To recolour a retailer's line on the price charts (the
+workspace's own line included), read `twelfth_get_settings` for `chart_colours`,
+then call `twelfth_update_settings` with a patch such as `{ "<retailer key>": "red" }`
+and the revision you read. Never claim a change no tool made.
 
 More: https://twelfth.ai/developers/mcp

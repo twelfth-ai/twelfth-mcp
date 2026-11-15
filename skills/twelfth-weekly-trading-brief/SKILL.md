@@ -28,7 +28,7 @@ skill. This skill is the brief only.
   `twelfth_get_products`, `search_catalogue` and `find_supplier` read the
   workspace within the connection's remits. The `get_*` snapshot tools
   (`get_sales_metrics`, `get_inventory_position`, `get_product_ranking` and the
-  rest) read only the open work unit. Do not present a snapshot ranking as the
+  rest) read only the open task. Do not present a snapshot ranking as the
   top of the business.
 - **No week-on-week series.** Product figures are current (for example units
   last four weeks), not a weekly history. For a change on last week, read last

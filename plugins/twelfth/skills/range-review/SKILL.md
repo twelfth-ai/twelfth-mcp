@@ -191,5 +191,5 @@ category IDs, `find_supplier` for suppliers, `search_catalogue` for products.
 - Playbook guidance on ranging: `get_methodology`.
 
 `find_similar_products`, `get_product_ranking` and the other `get_*` line tools
-read only the lines in the open work unit. Use them for substitutes and ranking
+read only the lines in the open task. Use them for substitutes and ranking
 among those lines; for the whole category, use `twelfth_list_products`.

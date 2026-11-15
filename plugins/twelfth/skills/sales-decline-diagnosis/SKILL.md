@@ -202,5 +202,5 @@ currency and timezone, and resolve names before filtering:
 - Playbook guidance on a cause: `get_methodology`.
 
 `get_entity_profile`, `get_sales_metrics`, `get_inventory_position` and the
-other `get_*` line tools read only the lines in the open work unit; an empty
+other `get_*` line tools read only the lines in the open task; an empty
 result there is not proof a line is unranged or unsold.

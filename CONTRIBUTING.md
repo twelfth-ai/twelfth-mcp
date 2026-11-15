@@ -24,4 +24,5 @@ It uses no secrets or application credentials and installs no project
 dependencies. Public issues and comments do not trigger workflows.
 
 Merging into `main` requires passing CI, an independent approval of the latest
-changes and resolved review conversations. Only squash merges are allowed.
+changes and resolved review conversations. Only squash merges are allowed. The
+repository owner may bypass these rules on a pull request.
